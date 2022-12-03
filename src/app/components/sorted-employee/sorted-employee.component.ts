@@ -5,12 +5,12 @@ import {EmployeeModel} from "../../models/employee.model";
 import {map} from "rxjs/operators";
 
 @Component({
-  selector: 'app-employee-list',
-  templateUrl: './employee-list.component.html',
+  selector: 'app-sorted-employee',
+  templateUrl: './sorted-employee.component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EmployeeListComponent {
+export class SortedEmployeeComponent {
   private _orderSubject: BehaviorSubject<string> = new BehaviorSubject<string>('asc')
   public employeeList$: Observable<string>= this._orderSubject.asObservable();
 
