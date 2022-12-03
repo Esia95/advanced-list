@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-title>Sorted employees by salary</mat-card-title>
+  <mat-card-content>
+    <mat-selection-list role="list" fxLayout="row" [multiple]="false">
+      <mat-list-option role="listoption" *ngFor="let item of employeeSort | async" (click)="sort(item)">
+        {{item}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card-content>
+</mat-card>
+
+
+
+<mat-card>
+  <mat-card-title>Employee:</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let item of employee$ | async">
+        {{item.name}} {{item.salary}} $
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+
