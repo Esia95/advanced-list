@@ -6,6 +6,8 @@ import { FilteredProductRoutingComponent } from './components/filtered-product-b
 import { SortedEmployeeComponent } from './components/sorted-employee/sorted-employee.component';
 import { FilteredEmployeeComponent } from './components/filtered-employee/filtered-employee.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { BeersComponent } from './components/beers/beers.component';
+import { ProductsComponent } from './components/products/products.component';
 import { FilteredProductListComponentModule } from './components/filtered-product-list/filtered-product-list.component-module';
 import { CategoriesServiceModule } from './services/categories.service-module';
 import { ProductServiceModule } from './services/product.service-module';
@@ -15,6 +17,9 @@ import { SortedEmployeeComponentModule } from './components/sorted-employee/sort
 import { EmployeeServiceModule } from './services/employee.service-module';
 import { FilteredEmployeeComponentModule } from './components/filtered-employee/filtered-employee.component-module';
 import { EmployeeListComponentModule } from './components/employee-list/employee-list.component-module';
+import { BeersComponentModule } from './components/beers/beers.component-module';
+import { BeersServiceModule } from './services/beers.service-module';
+import { ProductsComponentModule } from './components/products/products.component-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([
@@ -23,8 +28,10 @@ import { EmployeeListComponentModule } from './components/employee-list/employee
     { path: 'products/:category', component: FilteredProductRoutingComponent },
     { path: 'sorted-employees', component: SortedEmployeeComponent },
     { path: 'filtered-employees', component: FilteredEmployeeComponent },
-    { path: 'employees', component: EmployeeListComponent }
-  ]), FilteredProductListComponentModule, CategoriesServiceModule, ProductServiceModule, SortedProductListComponentModule, FilteredProductRoutingComponentModule, SortedEmployeeComponentModule, EmployeeServiceModule, FilteredEmployeeComponentModule, EmployeeListComponentModule],
+    { path: 'employees', component: EmployeeListComponent },
+    { path: 'beers-with-pagination', component: BeersComponent },
+    { path: 'products', component: ProductsComponent }
+  ]), FilteredProductListComponentModule, CategoriesServiceModule, ProductServiceModule, SortedProductListComponentModule, FilteredProductRoutingComponentModule, SortedEmployeeComponentModule, EmployeeServiceModule, FilteredEmployeeComponentModule, EmployeeListComponentModule, BeersComponentModule, BeersServiceModule, ProductsComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
