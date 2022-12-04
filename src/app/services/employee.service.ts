@@ -5,10 +5,15 @@ import { EmployeeModel } from '../models/employee.model';
 import {map} from "rxjs/operators";
 import {ApiResponse} from "./api.response";
 import {EmployeeResponse} from "../models/employee-response.model";
+import {ProductModel} from "../models/product.model";
 
 @Injectable()
 export class EmployeeService {
   constructor(private _httpClient: HttpClient) {
+  }
+
+  delete(id: number): Observable<EmployeeModel> {
+    return this._httpClient.delete<EmployeeModel>(`https://dummy.restapiexample.com/api/v1/delete/${id}`);
   }
 
   getAll(): Observable<{ name: string; id: number; salary: string; age: string }[]> {

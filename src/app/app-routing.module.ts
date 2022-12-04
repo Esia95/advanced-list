@@ -28,9 +28,9 @@ import { ProductsComponentModule } from './components/products/products.componen
     { path: 'products/:category', component: FilteredProductRoutingComponent },
     { path: 'sorted-employees', component: SortedEmployeeComponent },
     { path: 'filtered-employees', component: FilteredEmployeeComponent },
-    { path: 'employees', component: EmployeeListComponent },
+    { path: 'refresh-employees', component: EmployeeListComponent },
     { path: 'beers-with-pagination', component: BeersComponent },
-    { path: 'products', component: ProductsComponent }
+    { path: 'refresh-products', component: ProductsComponent }
   ]), FilteredProductListComponentModule, CategoriesServiceModule, ProductServiceModule, SortedProductListComponentModule, FilteredProductRoutingComponentModule, SortedEmployeeComponentModule, EmployeeServiceModule, FilteredEmployeeComponentModule, EmployeeListComponentModule, BeersComponentModule, BeersServiceModule, ProductsComponentModule],
   exports: [RouterModule]
 })

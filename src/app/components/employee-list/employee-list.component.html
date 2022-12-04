@@ -1,21 +1,24 @@
-<!--<mat-list role="list">-->
-<!--  <mat-list-item role="listitem" *ngFor="let item of data$ | async">-->
-<!--    <h2>Employee: {{item.name}}</h2>-->
-<!--    <h3>Age: {{item.age}}-->
-<!--      Salary: {{item.salary}}</h3>-->
-<!--  </mat-list-item>-->
-<!--</mat-list>-->
+<mat-card>
+  <mat-card-title>Employee List:</mat-card-title>
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let item of refreshedList$ | async">
+          {{item.name}}
+          <button mat-raised-button color="primary" (click)="delete(item.id)">Remove</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+</mat-card>
 
 
+<!--<div class="container" style="text-align: -webkit-center;">-->
+<!--  <h1 style="padding-top: 20px">Employees:</h1>-->
+<!--  <div class="card" style="width: 18rem; margin: 20px" *ngFor="let item of data$ | async">-->
 
-<div class="container" style="text-align: -webkit-center;">
-  <h1 style="padding-top: 20px">Employees:</h1>
-  <div class="card" style="width: 18rem; margin: 20px" *ngFor="let item of data$ | async">
-
-    <div class="card-body">
-      <h2 class="card-title">{{item.name}}</h2>
-      <p class="card-text">Age: {{item.age}}</p>
-      <p class="card-text">Salary: {{item.salary}} $</p>
-    </div>
-  </div>
-</div>
+<!--    <div class="card-body">-->
+<!--      <h2 class="card-title">{{item.name}}</h2>-->
+<!--      <p class="card-text">Age: {{item.age}}</p>-->
+<!--      <p class="card-text">Salary: {{item.salary}} $</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
